@@ -1,0 +1,111 @@
+V....IMPORTANT --------   steps to make git  using command line
+
+Last login: Thu Aug 29 08:49:59 on ttys000
+(base) inamul@inamuls-MacBook-Air ~ % mkdir gitpull
+(base) inamul@inamuls-MacBook-Air ~ % cd gitpull   
+(base) inamul@inamuls-MacBook-Air gitpull % touch chapter1.txt
+(base) inamul@inamuls-MacBook-Air gitpull % touch chapter2.txt
+(base) inamul@inamuls-MacBook-Air gitpull % touch chapter3.txt
+(base) inamul@inamuls-MacBook-Air gitpull % git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+Initialized empty Git repository in /Users/inamul/gitpull/.git/
+(base) inamul@inamuls-MacBook-Air gitpull % git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	chapter1.txt
+	chapter2.txt
+	chapter3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+(base) inamul@inamuls-MacBook-Air gitpull % git add.  
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+	add
+(base) inamul@inamuls-MacBook-Air gitpull % git add .
+(base) inamul@inamuls-MacBook-Air gitpull % git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   chapter1.txt
+	new file:   chapter2.txt
+	new file:   chapter3.txt
+
+(base) inamul@inamuls-MacBook-Air gitpull % git commit -m "All chapters"
+[master (root-commit) 8911023] All chapters
+ Committer: Inamul Haque <inamul@inamuls-MacBook-Air.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 chapter1.txt
+ create mode 100644 chapter2.txt
+ create mode 100644 chapter3.txt
+(base) inamul@inamuls-MacBook-Air gitpull % git log                     
+commit 8911023f8bef314d3355dfa4182714973a7165d9 (HEAD -> master)
+Author: Inamul Haque <inamul@inamuls-MacBook-Air.local>
+Date:   Thu Aug 29 09:32:05 2024 -0700
+
+    All chapters
+(base) inamul@inamuls-MacBook-Air gitpull % git remote add origin https://github.com/INAM-2002/inam2.git
+(base) inamul@inamuls-MacBook-Air gitpull % git push -u origin main
+
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/INAM-2002/inam2.git'
+(base) inamul@inamuls-MacBook-Air gitpull % git branch -M main
+
+(base) inamul@inamuls-MacBook-Air gitpull % git remote add origin https://github.com/INAM-2002/inam2.git
+error: remote origin already exists.
+(base) inamul@inamuls-MacBook-Air gitpull % git push -u origin main
+
+Username for 'https://github.com':     
+Password for 'https://github.com': 
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/INAM-2002/inam2.git/'
+(base) inamul@inamuls-MacBook-Air gitpull % 
+(base) inamul@inamuls-MacBook-Air gitpull % git remote add origin https://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@github.com/INAM-2002/inam2
+error: remote origin already exists.
+(base) inamul@inamuls-MacBook-Air gitpull % git push -u origin main
+
+Username for 'https://github.com': 
+Password for 'https://github.com': 
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/INAM-2002/inam2.git/'
+(base) inamul@inamuls-MacBook-Air gitpull % 
+(base) inamul@inamuls-MacBook-Air gitpull % git remote set-url  origin https://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@github.com/INAM-2002/inam2
+(base) inamul@inamuls-MacBook-Air gitpull % git push -u origin main
+
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 237 bytes | 237.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/INAM-2002/inam2
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+(base) inamul@inamuls-MacBook-Air gitpull % 
